@@ -1,0 +1,80 @@
+.App {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 100vh;
+  transition: ease .5s linear;
+  background-image: url('./assets/2.jpg');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .box{
+    position: relative;
+    width: 800px;
+    height: 800px;
+    .item{
+      position: absolute;
+      top: 390px;
+      text-align: right;
+      transition: all .5s linear;
+      color:#fff;
+    }
+    .active{
+      font-size: 18px;
+      font-weight: bold;
+      color: orange;
+    }
+    .year {
+      width: 100%;
+      margin-top: -10px; 
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      color: orange;
+    }
+    .month{
+      width: 200px;
+      right: 300px;
+    }
+    .day{
+      width: 480px;
+      right: 160px;
+    }
+    .week{
+      width: 340px;
+      right: 230px;
+    }
+    .hour{
+      width: 600px;
+      right: 100px;
+    }
+    .minute{
+      width: 780px;
+      right: 10px;
+    }
+    .second{
+      width: 940px;
+      right: -70px;
+    }
+    // .second-wrap {
+      // width: 800px;
+      // height: 800px;
+      // animation: rotates infinite 60s linear;
+      
+    // }
+  }
+}
+@keyframes rotates {
+  to {
+    transform: rotate(360deg);
+  }
+  from {
+    transform: rotate(0deg);
+  }
+}
