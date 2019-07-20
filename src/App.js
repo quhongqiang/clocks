@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
 import './rem.js';
+import fix from './fix'
 
 function App() {
   const [bg] = useState(2);
@@ -69,7 +70,9 @@ function App() {
         </div>
         {array(12).map((item,index)=>{
           return (
-            <div key={index} className={`month item ${index===(month-1)?"active":""}`} style={{transform: `rotate(${30*(month-1)-index*30}deg)`}}>
+            <div key={index}
+                 className={`month item ${index===(month-1)?"active":""}`}
+                 style={{transform: `rotate(${30*(month-1-index) + fix('month') * 360}deg)`}}>
               {`${numToBig(item)}月`}
             </div>
           )
@@ -77,7 +80,9 @@ function App() {
 
         {array(getDays(yearDay, monthDay)).map((item,index)=>{
           return (
-            <div key={index} className={`day item ${index===(day-1)?"active":""}`} style={{transform: `rotate(${(360/getDays(yearDay, monthDay))*(day-1)-index*(360/getDays(yearDay, monthDay))}deg)`}}>
+            <div key={index}
+                 className={`day item ${index===(day-1)?"active":""}`}
+                 style={{transform: `rotate(${(360/getDays(yearDay, monthDay))*(day-1-index) + fix('day') * 360}deg)`}}>
               {`${numToBig(item)}日`}
             </div>
           )
@@ -85,9 +90,9 @@ function App() {
 
         {array(7).map((item,index)=>{
           return (
-            <div key={index} 
-            className={`week item ${index===(week-1)?"active":""}`} 
-            style={{transform: `rotate(${(360/7)*(week-1)-index*(360/7)}deg)`}}>
+            <div key={index}
+            className={`week item ${index===(week-1)?"active":""}`}
+            style={{transform: `rotate(${(360/7)*(week-1-index) + fix('week') * 360}deg)`}}>
               {`星期${numToBig(item)}`}
             </div>
           )
@@ -95,27 +100,27 @@ function App() {
 
         {array(24).map((item,index)=>{
           return (
-            <div key={index} 
-            className={`hour item ${index===(hour-1)?"active":""}`} 
-            style={{transform: `rotate(${(360/24)*(hour-1)-index*(360/24)}deg)`}}>
+            <div key={index}
+            className={`hour item ${index===(hour-1)?"active":""}`}
+            style={{transform: `rotate(${(360/24)*(hour-1-index) + fix('hour') * 360}deg)`}}>
               {`${numToBig(item)}点`}
             </div>
           )
         })}
         {array(60).map((item,index)=>{
           return (
-            <div key={index} 
-            className={`minute item ${index===(minute-1)?"active":""}`} 
-            style={{transform: `rotate(${(360/60)*(minute-1)-index*(360/60)}deg)`}}>
+            <div key={index}
+            className={`minute item ${index===(minute-1)?"active":""}`}
+            style={{transform: `rotate(${(360/60)*(minute-1-index) + fix('minute') * 360}deg)`}}>
               {`${numToBig(item)}分`}
             </div>
           )
         })}
         {array(60).map((item,index)=>{
           return (
-            <div key={index} 
-            className={`second item ${index===(second-1)?"active":""}`} 
-            style={{transform: `rotate(${(360/60)*(second-1)-index*(360/60)}deg)`}}>
+            <div key={index}
+            className={`second item ${index===(second-1)?"active":""}`}
+            style={{transform: `rotate(${(360/60)*(second-1-index) + fix('second') * 360}deg)`}}>
               {`${numToBig(item)}秒`}
             </div>
           )
