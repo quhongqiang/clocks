@@ -13,7 +13,7 @@ const { override, fixBabelImports,addPostcssPlugins } = require('customize-cra')
  * [关闭打包后的sourcemap description]
  * [打包后我们会发现静态文件夹中会有很多的css和js的map文件，关闭sourcemap]
  */
-// process.env.GENERATE_SOURCEMAP = "false";
+process.env.GENERATE_SOURCEMAP = "false";
 
 module.exports = override(
   fixBabelImports('import', {

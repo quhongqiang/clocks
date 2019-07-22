@@ -1,3 +1,5 @@
+![效果图](https://github.com/quhongqiang/clocks/blob/master/src/assets/11.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
